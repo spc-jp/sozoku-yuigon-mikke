@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>相続のまえと、あとを。｜遺言みっけ × 相続みっけ</title>
+<meta name="description" content="生前の遺言書準備から、亡くなった後の相続手続きまで。AI診断であなたの「やること」が3〜5分でわかります。Smile Plus Consultingの「みっけシリーズ」。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#223670;
+  --navy-dark:#1a2956;
+  --gold:#D0A900;
+  --gold-light:#E8C547;
+  --sakura:#FCE7E9;
+  --paper:#FAF7F2;
+  --ink:#2A2A2A;
+  --gray:#6B6B6B;
+  --line:#E5DFD3;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.8;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:80px;
+}
+.serif{font-family:'Noto Serif JP',serif}
+.container{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* HERO */
+.hero{
+  position:relative;
+  background:linear-gradient(180deg,#FAF7F2 0%,#FCE7E9 50%,#FAF7F2 100%);
+  padding:80px 24px 100px;
+  text-align:center;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:40px;left:50%;
+  transform:translateX(-50%);
+  width:120px;height:120px;background:var(--gold);
+  border-radius:50%;opacity:0.08;filter:blur(30px);
+}
+.hero-badge{
+  display:inline-block;padding:6px 18px;background:white;
+  border:1px solid var(--gold);color:var(--navy);
+  font-size:13px;letter-spacing:0.1em;
+  border-radius:999px;margin-bottom:32px;position:relative;
+}
+.hero h1{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(36px,7vw,64px);
+  font-weight:700;color:var(--navy);
+  line-height:1.3;margin-bottom:24px;
+  letter-spacing:0.02em;position:relative;
+}
+.hero h1 .accent{color:var(--gold)}
+.hero-sub{
+  font-size:clamp(15px,2.2vw,18px);
+  color:var(--gray);margin-bottom:48px;
+  line-height:1.9;position:relative;
+}
+.hero-cta-wrap{
+  display:flex;gap:16px;justify-content:center;
+  flex-wrap:wrap;position:relative;
+}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:18px 32px;border-radius:8px;text-decoration:none;
+  font-weight:700;font-size:16px;
+  transition:all 0.2s ease;min-width:240px;
+  border:none;cursor:pointer;
+}
+.btn-primary{
+  background:var(--navy);color:white;
+  box-shadow:0 4px 12px rgba(34,54,112,0.25);
+}
+.btn-primary:hover{
+  background:var(--navy-dark);transform:translateY(-2px);
+  box-shadow:0 6px 16px rgba(34,54,112,0.35);
+}
+.btn-secondary{
+  background:white;color:var(--navy);
+  border:2px solid var(--navy);
+}
+.btn-secondary:hover{
+  background:var(--navy);color:white;transform:translateY(-2px);
+}
+.btn-icon{font-size:20px;margin-right:8px}
+
+/* セクション共通 */
+.section{padding:80px 24px}
+.section-title{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(26px,4vw,36px);
+  color:var(--navy);text-align:center;
+  margin-bottom:16px;font-weight:700;line-height:1.4;
+}
+.section-sub{
+  text-align:center;color:var(--gray);
+  margin-bottom:56px;font-size:15px;line-height:1.9;
+}
+.divider-gold{
+  width:40px;height:2px;background:var(--gold);
+  margin:0 auto 32px;
+}
+
+/* 共感セクション */
+.two-col{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:24px;margin-top:40px;
+}
+.card-empathy{
+  background:white;border-radius:16px;padding:40px 32px;
+  border:1px solid var(--line);transition:all 0.3s;
+  text-align:center;
+}
+.card-empathy:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 32px rgba(34,54,112,0.12);
+}
+.card-empathy .icon{font-size:48px;margin-bottom:16px;display:block}
+.card-empathy h3{
+  font-family:'Noto Serif JP',serif;color:var(--navy);
+  font-size:20px;margin-bottom:24px;line-height:1.5;
+}
+.card-empathy ul{list-style:none;text-align:left;margin-bottom:32px}
+.card-empathy ul li{
+  padding:8px 0 8px 24px;position:relative;
+  color:var(--ink);font-size:14px;
+}
+.card-empathy ul li::before{
+  content:'・';color:var(--gold);position:absolute;
+  left:8px;font-weight:700;
+}
+
+/* 3つのお約束 */
+.three-promise{background:linear-gradient(180deg,white 0%,var(--paper) 100%)}
+.promise-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:32px;margin-top:40px;
+}
+.promise-item{text-align:center;padding:24px}
+.promise-item .icon{font-size:56px;margin-bottom:16px;display:block}
+.promise-item h4{
+  font-family:'Noto Serif JP',serif;color:var(--navy);
+  font-size:18px;margin-bottom:12px;
+}
+.promise-item p{color:var(--gray);font-size:14px;line-height:1.8}
+
+/* アプリ詳細 */
+.app-detail{background:white}
+.app-detail.alt{background:var(--paper)}
+.app-header{text-align:center;margin-bottom:48px}
+.app-emoji{font-size:56px;margin-bottom:16px;display:block}
+.app-name{
+  font-family:'Noto Serif JP',serif;font-size:32px;
+  color:var(--navy);font-weight:700;margin-bottom:8px;
+}
+.app-tagline{color:var(--gray);font-size:16px}
+.app-steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;margin-bottom:48px;
+}
+.step-item{
+  background:white;border:1px solid var(--line);
+  border-radius:12px;padding:28px 24px;
+  text-align:center;position:relative;
+}
+.step-number{
+  display:inline-block;width:36px;height:36px;
+  line-height:36px;border-radius:50%;
+  background:var(--gold);color:white;font-weight:700;
+  font-size:14px;margin-bottom:12px;
+  font-family:'Noto Serif JP',serif;
+}
+.step-item h5{
+  color:var(--navy);font-size:16px;
+  margin-bottom:8px;font-weight:700;
+}
+.step-item p{color:var(--gray);font-size:13px;line-height:1.7}
+.app-cta{text-align:center}
+.notice-bar{
+  background:linear-gradient(90deg,#FFF8E1,#FFEFC1);
+  border-left:4px solid var(--gold);
+  padding:16px 24px;border-radius:8px;
+  margin:0 auto 32px;max-width:720px;
+  font-size:15px;color:var(--navy);font-weight:500;
+}
+
+/* チェックシート */
+.checklist-section{background:var(--sakura)}
+.checklist{
+  max-width:720px;margin:0 auto;background:white;
+  border-radius:16px;padding:48px 40px;
+  box-shadow:0 8px 24px rgba(34,54,112,0.08);
+}
+.checklist-item{
+  display:flex;align-items:flex-start;
+  padding:14px 0;border-bottom:1px dashed var(--line);
+  font-size:15px;
+}
+.checklist-item:last-child{border-bottom:none}
+.checklist-item .check{
+  color:var(--gold);font-weight:700;margin-right:12px;
+  font-size:18px;flex-shrink:0;
+}
+
+/* FAQ */
+.faq-section{background:white}
+.faq-list{max-width:760px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--line);padding:24px 0}
+.faq-q{
+  font-family:'Noto Serif JP',serif;color:var(--navy);
+  font-weight:700;font-size:17px;margin-bottom:12px;
+  display:flex;align-items:flex-start;
+}
+.faq-q::before{
+  content:'Q.';color:var(--gold);font-weight:700;
+  margin-right:12px;font-family:'Noto Serif JP',serif;
+}
+.faq-a{
+  color:var(--ink);font-size:15px;line-height:1.9;padding-left:28px;
+}
+
+/* 想い */
+.vision-section{background:linear-gradient(180deg,var(--paper) 0%,white 100%)}
+.vision-box{max-width:720px;margin:0 auto;text-align:center}
+.vision-quote{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(24px,4vw,32px);
+  color:var(--navy);margin-bottom:32px;
+  line-height:1.6;font-weight:700;
+}
+.vision-body{
+  color:var(--ink);font-size:15px;line-height:2.1;
+  text-align:left;margin-bottom:32px;
+}
+.vision-body p{margin-bottom:16px}
+.vision-sign{
+  text-align:right;font-family:'Noto Serif JP',serif;
+  color:var(--navy);font-size:15px;line-height:1.8;
+}
+
+/* 士業オファー */
+.b2b-section{background:var(--navy);color:white;padding:80px 24px}
+.b2b-section .section-title{color:white}
+.b2b-section .section-sub{color:rgba(255,255,255,0.8)}
+.b2b-features{
+  max-width:720px;margin:0 auto 40px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(208,169,0,0.3);
+  border-radius:16px;padding:40px;
+}
+.b2b-feature-item{
+  display:flex;align-items:flex-start;
+  padding:12px 0;font-size:15px;color:white;
+}
+.b2b-feature-item .check{
+  color:var(--gold);font-weight:700;margin-right:12px;
+  font-size:18px;flex-shrink:0;
+}
+.b2b-cta{text-align:center}
+.btn-gold{background:var(--gold);color:var(--navy);font-weight:700}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px)}
+
+/* フッター */
+.footer{
+  background:#1a2956;color:rgba(255,255,255,0.7);
+  padding:40px 24px 100px;text-align:center;
+  font-size:13px;line-height:1.8;
+}
+.footer-brand{
+  font-family:'Noto Serif JP',serif;color:white;
+  font-size:16px;margin-bottom:12px;letter-spacing:0.05em;
+}
+
+/* モバイル固定CTA */
+.sticky-cta{
+  position:fixed;bottom:0;left:0;right:0;
+  background:white;border-top:1px solid var(--line);
+  box-shadow:0 -4px 12px rgba(0,0,0,0.06);
+  padding:10px 12px;display:flex;gap:8px;z-index:100;
+}
+.sticky-cta a{
+  flex:1;text-align:center;padding:12px;
+  border-radius:8px;text-decoration:none;
+  font-weight:700;font-size:14px;
+}
+.sticky-cta .yuigon{background:var(--navy);color:white}
+.sticky-cta .sozoku{background:var(--gold);color:var(--navy)}
+
+@media(min-width:768px){
+  .sticky-cta{display:none}
+  body{padding-bottom:0}
+}
+@media(max-width:600px){
+  .section{padding:60px 20px}
+  .hero{padding:60px 20px 80px}
+  .btn{min-width:100%;padding:16px 24px}
+  .hero-cta-wrap{flex-direction:column}
+  .checklist{padding:32px 24px}
+  .b2b-features{padding:28px 24px}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <span class="hero-badge">SOZOKU × YUIGON ｜ みっけシリーズ</span>
+    <h1 class="serif">「いつか」を、<br><span class="accent">「いま」</span>に変える。</h1>
+    <p class="hero-sub">
+      相続のはじまりも、終わりも。<br>
+      3〜5分の診断で、あなたの「やること」が見えてきます。
+    </p>
+    <div class="hero-cta-wrap">
+      <a href="https://spc-jp.github.io/yuigon-mikke/" class="btn btn-primary" target="_blank" rel="noopener">
+        <span class="btn-icon">📜</span>生前の準備：遺言みっけ
+      </a>
+      <a href="https://spc-jp.github.io/sozoku-mikke/" class="btn btn-secondary" target="_blank" rel="noopener">
+        <span class="btn-icon">🏛️</span>いまの相続：相続みっけ
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 共感 -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">「相続」と聞いて、<br>最初に浮かぶのはどんな顔ですか？</h2>
+    <div class="divider-gold"></div>
+    <p class="section-sub">あなたの状況に合わせて、ぴったりの入口をご用意しています。</p>
+    <div class="two-col">
+      <div class="card-empathy">
+        <span class="icon">💭</span>
+        <h3>まだ元気なうちに<br>整理しておきたい方へ</h3>
+        <ul>
+          <li>子どもたちに迷惑をかけたくない</li>
+          <li>うちの財産、正直よくわからない</li>
+          <li>遺言書って、本当に必要なの？</li>
+          <li>相続税ってかかるのかな？</li>
+        </ul>
+        <a href="https://spc-jp.github.io/yuigon-mikke/" class="btn btn-primary" target="_blank" rel="noopener">
+          📜 遺言みっけを試す
+        </a>
+      </div>
+      <div class="card-empathy">
+        <span class="icon">😢</span>
+        <h3>大切な人を見送ったばかりの<br>方へ</h3>
+        <ul>
+          <li>何から手をつければいいの？</li>
+          <li>銀行口座が凍結されて困っている</li>
+          <li>相続登記って義務化されたの？</li>
+          <li>税理士に相談する前に整理したい</li>
+        </ul>
+        <a href="https://spc-jp.github.io/sozoku-mikke/" class="btn btn-primary" target="_blank" rel="noopener">
+          🏛️ 相続みっけを試す
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3つのお約束 -->
+<section class="section three-promise">
+  <div class="container">
+    <h2 class="section-title">ひとりで抱えこまない。<br>それが「みっけ」のお約束。</h2>
+    <div class="divider-gold"></div>
+    <div class="promise-grid">
+      <div class="promise-item">
+        <span class="icon">🔒</span>
+        <h4>個人情報の入力は不要</h4>
+        <p>名前も住所も、財産額も<br>聞きません。<br>安心して試せます。</p>
+      </div>
+      <div class="promise-item">
+        <span class="icon">⏱️</span>
+        <h4>たった3〜5分</h4>
+        <p>選択式の質問に答えるだけ。<br>難しい言葉は<br>使っていません。</p>
+      </div>
+      <div class="promise-item">
+        <span class="icon">🤖</span>
+        <h4>AIがそっと寄り添う</h4>
+        <p>あなたの状況に合わせて、<br>やることを<br>整理してくれます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 遺言みっけ -->
+<section class="section app-detail">
+  <div class="container">
+    <div class="app-header">
+      <span class="app-emoji">📜</span>
+      <h2 class="app-name serif">遺言みっけ</h2>
+      <p class="app-tagline">あなたの想いを、ご家族に確実に届けるために。</p>
+    </div>
+    <div class="app-steps">
+      <div class="step-item">
+        <span class="step-number">1</span>
+        <h5>12の質問に答える</h5>
+        <p>家族構成、財産、想い……<br>あなたのケースをひとつずつ。</p>
+      </div>
+      <div class="step-item">
+        <span class="step-number">2</span>
+        <h5>必要度を4段階で判定</h5>
+        <p>あなたに遺言書がどれだけ必要か、<br>わかりやすく見える化。</p>
+      </div>
+      <div class="step-item">
+        <span class="step-number">3</span>
+        <h5>下書き＋ざっくり試算</h5>
+        <p>あなた専用の遺言書下書きと、<br>相続税の概算をPDFで保存。</p>
+      </div>
+    </div>
+    <div class="app-cta">
+      <a href="https://spc-jp.github.io/yuigon-mikke/" class="btn btn-primary" target="_blank" rel="noopener">
+        📜 遺言みっけを試す（無料）
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 相続みっけ -->
+<section class="section app-detail alt">
+  <div class="container">
+    <div class="app-header">
+      <span class="app-emoji">🏛️</span>
+      <h2 class="app-name serif">相続みっけ</h2>
+      <p class="app-tagline">相続のやること、ぜんぶ見える化。</p>
+    </div>
+    <div class="notice-bar">
+      📣 2024年4月から「相続登記」が義務化されました。3年以内の登記が必要です。
+    </div>
+    <div class="app-steps">
+      <div class="step-item">
+        <span class="step-number">1</span>
+        <h5>状況を選ぶ</h5>
+        <p>急ぎの相続か、生前準備か。<br>あなたのいまを選んでください。</p>
+      </div>
+      <div class="step-item">
+        <span class="step-number">2</span>
+        <h5>財産の種類をチェック</h5>
+        <p>不動産・預貯金・株……<br>だいたいの把握で大丈夫です。</p>
+      </div>
+      <div class="step-item">
+        <span class="step-number">3</span>
+        <h5>AIアドバイザーに質問</h5>
+        <p>あなたの状況に合わせて、<br>やることを丁寧に教えます。</p>
+      </div>
+    </div>
+    <div class="app-cta">
+      <a href="https://spc-jp.github.io/sozoku-mikke/" class="btn btn-primary" target="_blank" rel="noopener">
+        🏛️ 相続みっけを試す（無料）
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- チェックシート -->
+<section class="section checklist-section">
+  <div class="container">
+    <h2 class="section-title">ひとつでも当てはまったら、<br>診断の合図です。</h2>
+    <div class="divider-gold"></div>
+    <div class="checklist">
+      <div class="checklist-item"><span class="check">✓</span>親が高齢で、そろそろ話を切り出したい</div>
+      <div class="checklist-item"><span class="check">✓</span>不動産があるけど、誰が継ぐかまだ決めていない</div>
+      <div class="checklist-item"><span class="check">✓</span>兄弟と意見が合わず、もめそうな予感がする</div>
+      <div class="checklist-item"><span class="check">✓</span>自筆の遺言書って、どう書くのか知りたい</div>
+      <div class="checklist-item"><span class="check">✓</span>相続税がかかるのか、ざっくり知っておきたい</div>
+      <div class="checklist-item"><span class="check">✓</span>葬儀のあと、何から手をつければいいかわからない</div>
+      <div class="checklist-item"><span class="check">✓</span>銀行口座が凍結されたと聞いて焦っている</div>
+      <div class="checklist-item"><span class="check">✓</span>相続登記が義務化されたって本当？</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section">
+  <div class="container">
+    <h2 class="section-title">よくある不安に、<br>お答えします。</h2>
+    <div class="divider-gold"></div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">本当に無料で使えますか？</div>
+        <div class="faq-a">はい。診断は完全無料でお使いいただけます。AIアドバイザーに繰り返し質問したい方には、月額のPro版もご用意しています。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">個人情報を入力しなくて大丈夫？</div>
+        <div class="faq-a">名前・住所・財産額の入力は一切不要です。状況をお選びいただくだけで診断できますので、安心してご利用ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">法的に有効な遺言書になりますか？</div>
+        <div class="faq-a">本ツールは「参考用の下書き」を作成するものです。法的に有効な遺言書の作成には、税理士・弁護士などの専門家へのご相談をおすすめしています。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">高齢の親に使わせたいのですが、難しくないですか？</div>
+        <div class="faq-a">質問はすべて選択式で、難しい専門用語は使っていません。スマホでもPCでも、文字が大きく見やすい設計になっています。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">税理士・専門家への紹介は受けられますか？</div>
+        <div class="faq-a">ご希望の方には、提携する税理士・行政書士のご紹介も可能です。診断後にお気軽にご相談ください。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 想い -->
+<section class="section vision-section">
+  <div class="container">
+    <div class="vision-box">
+      <p class="vision-quote">「考えるを、<br>ひとりにしない。」</p>
+      <div class="divider-gold"></div>
+      <div class="vision-body">
+        <p>相続のお話は、家族のあいだでも<br>なかなか切り出しにくいテーマです。</p>
+        <p>でも、私たちが20年以上にわたり中小企業の経営者さんに伴走してきて、見えてきたことがあります。</p>
+        <p>それは——<br>「準備しておけば、家族の絆はむしろ深まる」<br>ということ。</p>
+        <p>このアプリは、専門家にご相談いただく前の<br>「最初のひと押し」になることを目指しています。</p>
+        <p>ひとりで抱えこまずに、<br>まずは3分、試してみてください。</p>
+      </div>
+      <div class="vision-sign">
+        Smile Plus Consulting<br>
+        代表　松本 由也
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 士業オファー -->
+<section class="b2b-section">
+  <div class="container">
+    <h2 class="section-title">👔 税理士・行政書士の<br>先生方へ</h2>
+    <div class="divider-gold"></div>
+    <p class="section-sub">この2つのアプリ、<br>先生の事務所名で使いませんか？</p>
+    <div class="b2b-features">
+      <div class="b2b-feature-item"><span class="check">◆</span>事務所のロゴ・連絡先を入れたカスタマイズが可能</div>
+      <div class="b2b-feature-item"><span class="check">◆</span>診断結果のPDFに事務所名を自動印字</div>
+      <div class="b2b-feature-item"><span class="check">◆</span>相続相談の入口ツールとして、HPに設置可能</div>
+      <div class="b2b-feature-item"><span class="check">◆</span>月額制（¥◯◯◯〜）。導入・運用まで伴走サポート</div>
+      <div class="b2b-feature-item"><span class="check">◆</span>「考えるを、ひとりにしない」がコンセプト。初心者の先生でも安心</div>
+    </div>
+    <div class="b2b-cta">
+      <a href="mailto:info@example.com?subject=みっけシリーズ%20士業向け導入のお問い合わせ" class="btn btn-gold">
+        📩 まずはお気軽にご相談ください
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="footer-brand serif">Smile Plus Consulting</div>
+  <p>みっけシリーズ｜相続のまえと、あとを。</p>
+  <p>© 2026 Smile Plus Consulting / SPC</p>
+  <p style="margin-top:12px;font-size:12px;">※本サイトは一般的な情報提供を目的とするものであり、個別の法的・税務的アドバイスではありません。</p>
+</footer>
+
+<!-- モバイル固定CTA -->
+<div class="sticky-cta">
+  <a href="https://spc-jp.github.io/yuigon-mikke/" class="yuigon" target="_blank" rel="noopener">📜 遺言みっけ</a>
+  <a href="https://spc-jp.github.io/sozoku-mikke/" class="sozoku" target="_blank" rel="noopener">🏛️ 相続みっけ</a>
+</div>
+
+</body>
+</html>
