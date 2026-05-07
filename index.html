@@ -236,6 +236,98 @@ body{
   font-size:18px;flex-shrink:0;
 }
 
+/* 料金プラン */
+.pricing-section{
+  background:linear-gradient(180deg,white 0%,var(--paper) 100%);
+}
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;max-width:980px;margin:40px auto 0;
+  align-items:stretch;
+}
+.pricing-card{
+  background:white;border-radius:16px;
+  padding:40px 32px;border:1px solid var(--line);
+  text-align:center;transition:all 0.3s;
+  display:flex;flex-direction:column;
+  position:relative;
+}
+.pricing-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 32px rgba(34,54,112,0.12);
+}
+.pricing-card.featured{
+  border:2px solid var(--gold);
+  background:linear-gradient(180deg,#FFFBEF 0%,white 100%);
+  box-shadow:0 8px 24px rgba(208,169,0,0.18);
+  transform:translateY(-4px);
+}
+.pricing-badge{
+  position:absolute;top:-14px;left:50%;
+  transform:translateX(-50%);
+  background:var(--gold);color:var(--navy);
+  font-size:13px;font-weight:700;padding:6px 18px;
+  border-radius:999px;letter-spacing:0.05em;
+  white-space:nowrap;
+}
+.pricing-emoji{font-size:48px;margin-bottom:12px;display:block}
+.pricing-name{
+  font-family:'Noto Serif JP',serif;
+  color:var(--navy);font-size:22px;font-weight:700;
+  margin-bottom:8px;
+}
+.pricing-tagline{
+  color:var(--gray);font-size:13px;margin-bottom:24px;
+  min-height:38px;line-height:1.6;
+}
+.pricing-price-old{
+  color:var(--gray);font-size:14px;
+  text-decoration:line-through;margin-bottom:4px;
+  min-height:21px;
+}
+.pricing-price{
+  color:var(--navy);font-family:'Noto Serif JP',serif;
+  font-size:42px;font-weight:700;line-height:1;
+  margin-bottom:4px;
+}
+.pricing-price .yen{font-size:24px;margin-right:4px}
+.pricing-price .unit{font-size:16px;color:var(--gray);font-weight:400}
+.pricing-tax{font-size:12px;color:var(--gray);margin-bottom:24px}
+.pricing-features{
+  list-style:none;text-align:left;
+  margin-bottom:32px;flex-grow:1;
+}
+.pricing-features li{
+  padding:8px 0 8px 24px;position:relative;
+  font-size:14px;color:var(--ink);line-height:1.7;
+}
+.pricing-features li::before{
+  content:'✓';color:var(--gold);font-weight:700;
+  position:absolute;left:0;
+}
+.pricing-cta{
+  display:block;padding:14px 24px;
+  background:var(--navy);color:white;
+  text-decoration:none;border-radius:8px;
+  font-weight:700;transition:all 0.2s;
+  margin-top:auto;
+}
+.pricing-cta:hover{
+  background:var(--navy-dark);transform:translateY(-2px);
+}
+.pricing-cta.gold{background:var(--gold);color:var(--navy)}
+.pricing-cta.gold:hover{background:var(--gold-light)}
+.pricing-note{
+  text-align:center;color:var(--gray);
+  font-size:13px;margin-top:32px;line-height:1.8;
+}
+.discount-flag{
+  display:inline-block;background:#E63946;color:white;
+  font-size:12px;font-weight:700;padding:4px 10px;
+  border-radius:4px;margin-bottom:8px;letter-spacing:0.05em;
+}
+
 /* FAQ */
 .faq-section{background:white}
 .faq-list{max-width:760px;margin:0 auto}
@@ -331,6 +423,7 @@ body{
   .hero-cta-wrap{flex-direction:column}
   .checklist{padding:32px 24px}
   .b2b-features{padding:28px 24px}
+  .pricing-card.featured{transform:none}
 }
 </style>
 </head>
@@ -505,6 +598,95 @@ body{
   </div>
 </section>
 
+<!-- 料金プラン -->
+<section class="section pricing-section">
+  <div class="container">
+    <h2 class="section-title">無料体験から、<br>そのまま続けられます。</h2>
+    <div class="divider-gold"></div>
+    <p class="section-sub">
+      まずは無料で診断をお試しください。<br>
+      気に入っていただけたら、月額プランで深掘りもできます。
+    </p>
+
+    <div class="pricing-grid">
+
+      <!-- 遺言みっけ単体 -->
+      <div class="pricing-card">
+        <span class="pricing-emoji">📜</span>
+        <div class="pricing-name serif">遺言みっけ</div>
+        <p class="pricing-tagline">生前の準備をしっかり。<br>あなた専用の下書きを作成。</p>
+        <div class="pricing-price-old">&nbsp;</div>
+        <div class="pricing-price">
+          <span class="yen">¥</span>980<span class="unit">／月</span>
+        </div>
+        <div class="pricing-tax">税込・いつでも解約可能</div>
+        <ul class="pricing-features">
+          <li>12の質問で必要度を診断</li>
+          <li>あなた専用の遺言書下書きをPDF出力</li>
+          <li>相続税のざっくり試算</li>
+          <li>準備チェックリスト</li>
+          <li>診断は何度でもやり直しOK</li>
+        </ul>
+        <a href="https://spc-jp.github.io/yuigon-mikke/" class="pricing-cta" target="_blank" rel="noopener">
+          📜 まずは無料で試す
+        </a>
+      </div>
+
+      <!-- セット（一押し） -->
+      <div class="pricing-card featured">
+        <span class="pricing-badge">⭐ 一番人気・24%OFF</span>
+        <span class="pricing-emoji">📜🏛️</span>
+        <div class="pricing-name serif">セットプラン</div>
+        <p class="pricing-tagline">生前も、もしものときも。<br>相続のすべてに備える。</p>
+        <div class="pricing-price-old">通常 ¥1,960／月</div>
+        <div class="pricing-price">
+          <span class="yen">¥</span>1,480<span class="unit">／月</span>
+        </div>
+        <div class="pricing-tax">税込・いつでも解約可能</div>
+        <ul class="pricing-features">
+          <li><strong>遺言みっけ＋相続みっけ 両方</strong>使い放題</li>
+          <li>遺言書下書き＋相続のやることリスト</li>
+          <li>AIアドバイザーに何度でも相談</li>
+          <li>相続税ざっくり試算</li>
+          <li>専門家紹介サービス（ご希望の方）</li>
+          <li>毎月¥480お得！年間で<strong>¥5,760節約</strong></li>
+        </ul>
+        <a href="https://spc-jp.github.io/sozoku-yuigon-mikke/" class="pricing-cta gold">
+          ✨ セットプランを始める
+        </a>
+      </div>
+
+      <!-- 相続みっけ単体 -->
+      <div class="pricing-card">
+        <span class="pricing-emoji">🏛️</span>
+        <div class="pricing-name serif">相続みっけ</div>
+        <p class="pricing-tagline">いま起きている相続を、<br>AIと一緒に整理する。</p>
+        <div class="pricing-price-old">&nbsp;</div>
+        <div class="pricing-price">
+          <span class="yen">¥</span>980<span class="unit">／月</span>
+        </div>
+        <div class="pricing-tax">税込・いつでも解約可能</div>
+        <ul class="pricing-features">
+          <li>4ステップで状況を整理</li>
+          <li>AIアドバイザーに無制限で相談</li>
+          <li>必要書類のチェックリスト自動生成</li>
+          <li>相続登記・相続税の概算対応</li>
+          <li>専門家紹介サービス（オプション）</li>
+        </ul>
+        <a href="https://spc-jp.github.io/sozoku-mikke/" class="pricing-cta" target="_blank" rel="noopener">
+          🏛️ まずは無料で試す
+        </a>
+      </div>
+
+    </div>
+
+    <p class="pricing-note">
+      ※ お支払いはクレジットカード（Stripe決済）です。<br>
+      ※ ご解約はマイページからいつでも可能。違約金や日割りはございません。
+    </p>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="section faq-section">
   <div class="container">
@@ -513,7 +695,15 @@ body{
     <div class="faq-list">
       <div class="faq-item">
         <div class="faq-q">本当に無料で使えますか？</div>
-        <div class="faq-a">はい。診断は完全無料でお使いいただけます。AIアドバイザーに繰り返し質問したい方には、月額のPro版もご用意しています。</div>
+        <div class="faq-a">はい。診断そのものは完全無料でお使いいただけます。AIアドバイザーに何度も質問したり、PDF出力を繰り返し使いたい方には、月額¥980〜のプランをご用意しています。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">セットプランは、どちらか一方だけ使う月でも¥1,480ですか？</div>
+        <div class="faq-a">はい。月額¥1,480で、遺言みっけと相続みっけの両方が使い放題になります。たとえば「今月は遺言の準備中心、来月は相続手続きにシフト」といった使い方もOKです。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">途中で解約したら、どうなりますか？</div>
+        <div class="faq-a">マイページからいつでも解約できます。違約金や手数料は一切いただきません。次回更新日の前日までに解約すれば、それ以降の課金は発生しません。</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">個人情報を入力しなくて大丈夫？</div>
