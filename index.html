@@ -292,7 +292,7 @@ body{
   margin-bottom:4px;
 }
 .pricing-price .yen{font-size:24px;margin-right:4px}
-.pricing-price .unit{font-size:16px;color:var(--gray);font-weight:400}
+.pricing-price .unit{font-size:14px;color:var(--gold);font-weight:700;display:block;margin-top:6px;letter-spacing:0.1em}
 .pricing-tax{font-size:12px;color:var(--gray);margin-bottom:24px}
 .pricing-features{
   list-style:none;text-align:left;
@@ -321,11 +321,6 @@ body{
 .pricing-note{
   text-align:center;color:var(--gray);
   font-size:13px;margin-top:32px;line-height:1.8;
-}
-.discount-flag{
-  display:inline-block;background:#E63946;color:white;
-  font-size:12px;font-weight:700;padding:4px 10px;
-  border-radius:4px;margin-bottom:8px;letter-spacing:0.05em;
 }
 
 /* FAQ */
@@ -601,11 +596,11 @@ body{
 <!-- 料金プラン -->
 <section class="section pricing-section">
   <div class="container">
-    <h2 class="section-title">無料体験から、<br>そのまま続けられます。</h2>
+    <h2 class="section-title">一度のお支払いで、<br>ずっとお使いいただけます。</h2>
     <div class="divider-gold"></div>
     <p class="section-sub">
-      まずは無料で診断をお試しください。<br>
-      気に入っていただけたら、月額プランで深掘りもできます。
+      月額制ではなく「買い切り型」。<br>
+      毎月の課金を気にせず、必要なときに何度でもご利用いただけます。
     </p>
 
     <div class="pricing-grid">
@@ -617,9 +612,10 @@ body{
         <p class="pricing-tagline">生前の準備をしっかり。<br>あなた専用の下書きを作成。</p>
         <div class="pricing-price-old">&nbsp;</div>
         <div class="pricing-price">
-          <span class="yen">¥</span>980<span class="unit">／月</span>
+          <span class="yen">¥</span>2,980
+          <span class="unit">買い切り</span>
         </div>
-        <div class="pricing-tax">税込・いつでも解約可能</div>
+        <div class="pricing-tax">税込・追加課金なし</div>
         <ul class="pricing-features">
           <li>12の質問で必要度を診断</li>
           <li>あなた専用の遺言書下書きをPDF出力</li>
@@ -634,25 +630,26 @@ body{
 
       <!-- セット（一押し） -->
       <div class="pricing-card featured">
-        <span class="pricing-badge">⭐ 一番人気・24%OFF</span>
+        <span class="pricing-badge">⭐ 一番人気・16%OFF</span>
         <span class="pricing-emoji">📜🏛️</span>
         <div class="pricing-name serif">セットプラン</div>
         <p class="pricing-tagline">生前も、もしものときも。<br>相続のすべてに備える。</p>
-        <div class="pricing-price-old">通常 ¥1,960／月</div>
+        <div class="pricing-price-old">通常 ¥5,960</div>
         <div class="pricing-price">
-          <span class="yen">¥</span>1,480<span class="unit">／月</span>
+          <span class="yen">¥</span>4,980
+          <span class="unit">買い切り</span>
         </div>
-        <div class="pricing-tax">税込・いつでも解約可能</div>
+        <div class="pricing-tax">税込・追加課金なし</div>
         <ul class="pricing-features">
           <li><strong>遺言みっけ＋相続みっけ 両方</strong>使い放題</li>
           <li>遺言書下書き＋相続のやることリスト</li>
           <li>AIアドバイザーに何度でも相談</li>
           <li>相続税ざっくり試算</li>
           <li>専門家紹介サービス（ご希望の方）</li>
-          <li>毎月¥480お得！年間で<strong>¥5,760節約</strong></li>
+          <li><strong>¥980もお得！</strong>（セット割16%オフ）</li>
         </ul>
         <a href="https://spc-jp.github.io/sozoku-yuigon-mikke/" class="pricing-cta gold">
-          ✨ セットプランを始める
+          ✨ セットプランを購入する
         </a>
       </div>
 
@@ -663,9 +660,10 @@ body{
         <p class="pricing-tagline">いま起きている相続を、<br>AIと一緒に整理する。</p>
         <div class="pricing-price-old">&nbsp;</div>
         <div class="pricing-price">
-          <span class="yen">¥</span>980<span class="unit">／月</span>
+          <span class="yen">¥</span>2,980
+          <span class="unit">買い切り</span>
         </div>
-        <div class="pricing-tax">税込・いつでも解約可能</div>
+        <div class="pricing-tax">税込・追加課金なし</div>
         <ul class="pricing-features">
           <li>4ステップで状況を整理</li>
           <li>AIアドバイザーに無制限で相談</li>
@@ -682,7 +680,7 @@ body{
 
     <p class="pricing-note">
       ※ お支払いはクレジットカード（Stripe決済）です。<br>
-      ※ ご解約はマイページからいつでも可能。違約金や日割りはございません。
+      ※ 一度のお支払いで、その後の追加料金は一切いただきません。
     </p>
   </div>
 </section>
@@ -695,15 +693,19 @@ body{
     <div class="faq-list">
       <div class="faq-item">
         <div class="faq-q">本当に無料で使えますか？</div>
-        <div class="faq-a">はい。診断そのものは完全無料でお使いいただけます。AIアドバイザーに何度も質問したり、PDF出力を繰り返し使いたい方には、月額¥980〜のプランをご用意しています。</div>
+        <div class="faq-a">はい。診断そのものは完全無料でお試しいただけます。診断結果のPDF出力やAIアドバイザーへの無制限質問など、踏み込んだ機能をご利用になりたい方には買い切り版（¥2,980〜）をご用意しています。</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">セットプランは、どちらか一方だけ使う月でも¥1,480ですか？</div>
-        <div class="faq-a">はい。月額¥1,480で、遺言みっけと相続みっけの両方が使い放題になります。たとえば「今月は遺言の準備中心、来月は相続手続きにシフト」といった使い方もOKです。</div>
+        <div class="faq-q">買い切りって、本当に追加費用は発生しませんか？</div>
+        <div class="faq-a">はい。一度ご購入いただければ、月額課金や年会費などは一切発生しません。サブスクのように毎月引き落とされる心配がないので、安心してお使いいただけます。</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">途中で解約したら、どうなりますか？</div>
-        <div class="faq-a">マイページからいつでも解約できます。違約金や手数料は一切いただきません。次回更新日の前日までに解約すれば、それ以降の課金は発生しません。</div>
+        <div class="faq-q">セットプランは、別々に買うより本当にお得ですか？</div>
+        <div class="faq-a">はい。単体それぞれ¥2,980（合計¥5,960）のところ、セットなら¥4,980で両方ご利用いただけます。¥980おトクで、相続の「前」と「後」両方をカバーできます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">購入後、すぐに使えますか？</div>
+        <div class="faq-a">はい。クレジットカード決済が完了すると、すぐに専用パスワードをメールでお送りします。そのパスワードを画面に入力するだけで、すべての機能がご利用いただけます。</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">個人情報を入力しなくて大丈夫？</div>
